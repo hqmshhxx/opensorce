@@ -1,0 +1,7 @@
+hbase:
+  zookeeper.quorum: localhost
+  zookeeper.property.clientPort: 2181
+
+book:
+  tableName: "book"
+  family: "bookFamily"
