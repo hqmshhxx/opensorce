@@ -12,6 +12,11 @@
     <artifactId>flink</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-test-utils -->
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -39,6 +44,13 @@
             <artifactId>flink-java</artifactId>
             <version>1.7.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-clients -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-clients_2.12</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-shaded-hadoop2 -->
         <dependency>
             <groupId>org.apache.flink</groupId>
