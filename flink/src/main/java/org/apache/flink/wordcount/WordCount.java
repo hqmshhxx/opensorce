@@ -7,8 +7,11 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.util.Collector;
 import org.apache.flink.wordcount.util.WordCountData;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WordCount {
+    private static Logger logger = LoggerFactory.getLogger(WordCount.class);
     // *************************************************************************
     //     PROGRAM
     // *************************************************************************
@@ -30,8 +33,8 @@ public class WordCount {
             text = env.readTextFile(params.get("input"));
         } else {
             // get default test text data
-            System.out.println("Executing WordCount example with default input data set.");
-            System.out.println("Use --input to specify file input.");
+            logger.info("Executing WordCount example with default input data set.");
+            logger.info("Use --input to specify file input.");
             text = WordCountData.getDefaultTextLineDataSet(env);
         }
 
@@ -48,7 +51,7 @@ public class WordCount {
             // execute program
             env.execute("WordCount Example");
         } else {
-            System.out.println("Printing result to stdout. Use --output to specify output path.");
+            logger.info("Printing result to stdout. Use --output to specify output path.");
             counts.print();
         }
 
